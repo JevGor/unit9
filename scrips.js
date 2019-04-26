@@ -3,7 +3,8 @@ var row = document.getElementById("row")
 var colom = document.getElementById("colom")
 var button = document.getElementById("button")
 
-button.addEventListener('click', function (parent, rows, cols) {
+button.addEventListener('click', function (el, rows, cols) {
+  var el = elem
   var rows = parseInt(row.value)
   var cols = parseInt(colom.value)
   var table = document.createElement('table')
@@ -11,12 +12,12 @@ button.addEventListener('click', function (parent, rows, cols) {
   for (var i = 0; i < rows; i += 1) {
     var tr = document.createElement('tr');
 
-    for (var x = 1; x <= cols; x += 1) {
+    for (var x = 0; x < cols; x += 1) {
       var td = document.createElement('td');
       tr.appendChild(td);
     }
     table.appendChild(tr);
   }
 
-  parent.appendChild(table)
+  el.appendChild(table);
 })
